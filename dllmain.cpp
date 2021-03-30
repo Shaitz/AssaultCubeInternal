@@ -8,6 +8,7 @@ std::int32_t __stdcall enableCheats(HDC hDc)
     {
         localPlayer->health = 2000;
         localPlayer->playerInventoryPtr->curWeaponPtr->curAmmo = 2000;
+        setRecoil();
     }
     return FpWglSwapBuffers(hDc);
 }

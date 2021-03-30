@@ -22,7 +22,7 @@
 #include "typedefs.h"
 #include "vector.h"
 #include <vector>
-
+#include "funcs.h"
 /*#ifdef _DEBUG
 #pragma comment(lib, "libs/libMinHook-x86-v141-mdd.lib")
 #else

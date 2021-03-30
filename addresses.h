@@ -3,7 +3,7 @@
 
 inline std::uintptr_t FnWglSwapBuffers = reinterpret_cast<std::uintptr_t>(GetProcAddress(GetModuleHandle("opengl32.dll"), "wglSwapBuffers"));
 inline std::uintptr_t moduleBase = reinterpret_cast<std::uintptr_t>(GetModuleHandle("ac_client.exe"));
-
+inline std::uintptr_t recoil = 0x462020;
 
 class player
 {
