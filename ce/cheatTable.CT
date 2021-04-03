@@ -4,7 +4,7 @@
     <CheatEntry>
       <ID>6</ID>
       <Description>"playerObjPtr"</Description>
-      <LastState Value="0110A248" RealAddress="0050F4F4"/>
+      <LastState Value="0102A2B8" RealAddress="0050F4F4"/>
       <ShowAsHex>1</ShowAsHex>
       <VariableType>4 Bytes</VariableType>
       <Address>ac_client.exe+10F4F4</Address>
@@ -12,7 +12,7 @@
     <CheatEntry>
       <ID>7</ID>
       <Description>"ammoPtr"</Description>
-      <LastState Value="16" RealAddress="0110A398"/>
+      <LastState Value="19" RealAddress="0102A408"/>
       <VariableType>4 Bytes</VariableType>
       <Address>ac_client.exe+10f4f4</Address>
       <Offsets>
@@ -24,7 +24,7 @@
     <CheatEntry>
       <ID>9</ID>
       <Description>"ptrEntityList"</Description>
-      <LastState Value="0C53BDF8" RealAddress="0050F4F8"/>
+      <LastState Value="0C7FA348" RealAddress="0050F4F8"/>
       <ShowAsHex>1</ShowAsHex>
       <VariableType>4 Bytes</VariableType>
       <Address>ac_client.exe + 10f4f8</Address>
@@ -32,7 +32,7 @@
     <CheatEntry>
       <ID>10</ID>
       <Description>"entity 1 hp ptr"</Description>
-      <LastState Value="100" RealAddress="0C529BB0"/>
+      <LastState Value="100" RealAddress="0CEF1DB0"/>
       <VariableType>4 Bytes</VariableType>
       <Address>ac_client.exe + 10f4f8</Address>
       <Offsets>
@@ -43,7 +43,7 @@
     <CheatEntry>
       <ID>11</ID>
       <Description>"entity 2 hp ptr"</Description>
-      <LastState Value="100" RealAddress="0C529FE0"/>
+      <LastState Value="100" RealAddress="0CEECC58"/>
       <VariableType>4 Bytes</VariableType>
       <Address>ac_client.exe + 10f4f8</Address>
       <Offsets>
@@ -54,7 +54,7 @@
     <CheatEntry>
       <ID>12</ID>
       <Description>"recoil1"</Description>
-      <LastState Value="0" RealAddress="004FCB1C"/>
+      <LastState Value="25" RealAddress="004FCB1C"/>
       <VariableType>2 Bytes</VariableType>
       <Address>ac_client.exe+10f4f4</Address>
       <Offsets>
@@ -66,13 +66,33 @@
     <CheatEntry>
       <ID>13</ID>
       <Description>"recoil2"</Description>
-      <LastState Value="0" RealAddress="004FCB1E"/>
+      <LastState Value="50" RealAddress="004FCB1E"/>
       <VariableType>2 Bytes</VariableType>
       <Address>ac_client.exe+10f4f4</Address>
       <Offsets>
         <Offset>122</Offset>
         <Offset>c</Offset>
         <Offset>374</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>18</ID>
+      <Description>"z pos body"</Description>
+      <LastState Value="0" RealAddress="0102A2F4"/>
+      <VariableType>Float</VariableType>
+      <Address>ac_client.exe+10F4F4</Address>
+      <Offsets>
+        <Offset>3c</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>19</ID>
+      <Description>"z display pos head"</Description>
+      <LastState Value="4.5" RealAddress="0102A2C4"/>
+      <VariableType>Float</VariableType>
+      <Address>ac_client.exe+10F4F4</Address>
+      <Offsets>
+        <Offset>c</Offset>
       </Offsets>
     </CheatEntry>
   </CheatEntries>

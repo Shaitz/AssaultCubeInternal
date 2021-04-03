@@ -3,12 +3,39 @@
 std::int32_t __stdcall enableCheats(HDC hDc)
 {
     const auto localPlayer = *reinterpret_cast<player**>(moduleBase + 0x10f4f4);
+    uint8_t type = 0x00;
+    uintptr_t recoilBuffer;
 
     if (localPlayer)
     {
         localPlayer->health = 2000;
         localPlayer->playerInventoryPtr->curWeaponPtr->curAmmo = 2000;
-        setRecoil();
+
+        if (0x1 & GetAsyncKeyState(VK_NUMPAD1))
+        {
+            if (!hasHack(type, HackType::FLY)) // if fly is not toggled enable it 
+                localPlayer->spectate = 5;
+            else
+                localPlayer->spectate = 0;
+
+            type ^= HackType::FLY;
+        }
+
+        if (0x1 & GetAsyncKeyState(VK_NUMPAD2))
+        {
+            if (!hasHack(type, HackType::NO_CLIP))
+                localPlayer->noclip = 11;
+            else
+                localPlayer->noclip = 0;
+
+            type ^= HackType::NO_CLIP;
+        }
+
+        if (0x1 & GetAsyncKeyState(VK_NUMPAD3))
+        {
+            setRecoil(&recoilBuffer, type);
+            type ^= HackType::RECOIL;
+        }
     }
     return FpWglSwapBuffers(hDc);
 }
