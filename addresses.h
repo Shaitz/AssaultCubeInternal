@@ -15,11 +15,10 @@ enum HackType : uint8_t
 	INFINITE_AMMO	= 0x10
 };
 
-struct	ByteBuffer final
+struct ByteBuffer final
 {
 	BYTE data[32];
 };
-
 
 class player
 {

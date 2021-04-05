@@ -1,10 +1,11 @@
 #include "pch.h"
 
+inline std::uint8_t type = 0x000;
+inline std::uintptr_t recoilBuffer;
+
 std::int32_t __stdcall enableCheats(HDC hDc)
 {
     const auto localPlayer = *reinterpret_cast<player**>(moduleBase + 0x10f4f4);
-    uint8_t type = 0x00;
-    uintptr_t recoilBuffer;
 
     if (localPlayer)
     {
@@ -13,28 +14,28 @@ std::int32_t __stdcall enableCheats(HDC hDc)
 
         if (0x1 & GetAsyncKeyState(VK_NUMPAD1))
         {
-            if (!hasHack(type, HackType::FLY)) // if fly is not toggled enable it 
+            if (!isHackEnabled(type, FLY))
                 localPlayer->spectate = 5;
             else
                 localPlayer->spectate = 0;
 
-            type ^= HackType::FLY;
+            toggleHack(&type, FLY);
         }
 
         if (0x1 & GetAsyncKeyState(VK_NUMPAD2))
         {
-            if (!hasHack(type, HackType::NO_CLIP))
+            if (!isHackEnabled(type, NO_CLIP))
                 localPlayer->noclip = 11;
             else
                 localPlayer->noclip = 0;
 
-            type ^= HackType::NO_CLIP;
+            toggleHack(&type, NO_CLIP);
         }
 
         if (0x1 & GetAsyncKeyState(VK_NUMPAD3))
         {
             setRecoil(&recoilBuffer, type);
-            type ^= HackType::RECOIL;
+            toggleHack(&type, RECOIL);
         }
     }
     return FpWglSwapBuffers(hDc);
@@ -54,6 +55,7 @@ DWORD WINAPI hackThread(LPVOID param)
         else
             return -1;
     }
+
     while (1 & !GetAsyncKeyState(VK_NUMPAD0))
         Sleep(1);
 
