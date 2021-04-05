@@ -9,10 +9,10 @@ enum HackType : uint8_t
 {
 	NO_HACK			= 0x00,
 	RECOIL			= 0x01,
-	FLY				= 0x02,
+	FLY			= 0x02,
 	NO_CLIP			= 0x04,
 	INVINCIBLE		= 0x08,
-	INFINITE_AMMO	= 0x10
+	INFINITE_AMMO		= 0x10
 };
 
 struct ByteBuffer final
