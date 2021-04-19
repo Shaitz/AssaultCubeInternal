@@ -34,8 +34,8 @@ std::int32_t __stdcall enableCheats(HDC hDc)
 
         if (0x1 & GetAsyncKeyState(VK_NUMPAD3))
         {
-            setRecoil(&recoilBuffer, type);
-            toggleHack(&type, RECOIL);
+            if(setRecoil(&recoilBuffer, type));
+                toggleHack(&type, RECOIL);
         }
     }
     return FpWglSwapBuffers(hDc);
